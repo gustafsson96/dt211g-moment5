@@ -18,13 +18,15 @@ document.addEventListener('DOMContentLoaded', function () {
 /* btn functionality to start animation */
 const partyBtn = document.querySelector('.party-btn');
 
-partyBtn.addEventListener('click', function() {
-    const partyContainerEl = document.querySelector('.guy-img-container')
-    const partyGuy = document.querySelectorAll('.party-guy');
-    partyContainerEl.classList.toggle('party-started');
-    
-    partyGuy.forEach(guy => {
-        guy.classList.toggle('run-animation');
+if (partyBtn) {
+    partyBtn.addEventListener('click', function () {
+        const partyContainerEl = document.querySelector('.guy-img-container')
+        const partyGuy = document.querySelectorAll('.party-guy');
+        partyContainerEl.classList.toggle('party-started');
+
+        partyGuy.forEach(guy => {
+            guy.classList.toggle('run-animation');
+        });
+
     });
-    
-});
+}
