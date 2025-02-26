@@ -1,0 +1,8 @@
+{
+    "avif": {
+        "quality": 70
+    },
+    "jpeg": {
+        "quality": 80
+    }
+}

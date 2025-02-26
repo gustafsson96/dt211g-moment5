@@ -1,0 +1,344 @@
+@use "base";
+@use "component";
+@use "animations";
+
+/* general container placeholder rules */
+%main-container {
+    @extend %wavy-top-btm;
+    display: flex;
+    margin: 2em auto 5em;
+    padding: 5em 0;
+    line-height: 2em;
+    background-color: base.$light-theme-secondary;
+}
+
+%text-box-container {
+    margin: 0 auto;
+    padding: 4em 3em;
+    width: 45%;
+}
+
+/* mixin with if/else statement for responsive image styling */
+$rounded: true;
+
+@mixin responsive-image-styling ($margin-top: 5em, $margin-bottom: 5em) {
+    @if $rounded {
+        border-radius: 65px;
+        width: 90%;
+        height: auto;
+        margin: $margin-top auto $margin-bottom;
+
+        @media (max-width: 600px) {
+            border-radius: 0;
+            width: 98%;
+            margin: 1em 0;
+        }
+    }
+    @else {
+        border-radius: 0; // set sharp corners as default if rounded is false or not set
+    }
+}
+
+/* general body styling */
+body {
+    @include base.theme(base.$light-theme-bg, base.$light-theme-text, base.$light-theme-border, base.$light-theme-heading, base.$light-theme-primary, base.$light-theme-secondary);
+    font-family: base.$font-stack;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* navigation bar styling */
+.navbar {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 100%;
+    font-weight: bold;
+
+    ul {
+        display: flex;
+        gap: 0 2em;
+        list-style: none;
+        margin: 0.5em 0;
+        padding: 0.5em 0;
+        justify-content: center;
+        align-items: center;
+    }
+
+    li:first-child {
+        margin-left: 1.5em;
+    }
+
+    a {
+        display: block;
+        text-decoration: none;
+        font-size: 1.1em;
+        color: #000;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    .active-item {
+        text-decoration: underline;
+    }
+}
+
+/* specific animations.html styling */
+.btn-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.party-btn {
+    @extend %btn;
+    transition-property: background-color, color;
+    transition-duration: 1s;
+}
+
+.party-btn:hover {
+    background-color:#301934;
+    color: #ea2de3;
+}
+
+.guy-img-container {
+    display: flex;
+    flex-direction: column;
+
+    .guy-img {
+        animation: moveGuy 10s ease-in-out infinite alternate;
+        animation-play-state: paused;
+        margin: 7em 0;
+    }
+
+    .row-guys {
+        display: flex;
+        flex-direction: row;
+        position: relative;
+    }
+
+    .guy-img-2 {
+        animation: spinGuy 2s linear infinite normal;
+        animation-play-state: paused;
+        margin: 0 0 7em 0;
+        text-align: center;
+    }
+
+    .guy-img-3 {
+        animation: spinGuy 4s linear infinite normal;
+        animation-play-state: paused;
+        margin: 0 0 7em 0;
+        text-align: center;
+    }
+
+    .guy-img-4 {
+        animation: jumpGuy 1s ease-in-out infinite;
+        animation-play-state: paused;
+        margin: 0 0 7em 0;
+        text-align: end;
+        position: absolute;
+        right: 0;
+    }
+}
+
+/* specific index.html styling */
+.startpage-container {
+    @extend %main-container;
+    flex-direction: column;
+
+    div {
+        @extend %text-box-container;
+    }
+
+    p {
+        font-size: 1.2em;
+        margin-top: 0.3em;
+    }
+}
+
+/* specifik sass.html styling */
+.sass-container {
+    @extend %main-container;
+    flex-direction: column;
+
+    div {
+        @extend %text-box-container;
+    }
+
+    .question {
+        font-size: 1.4em;
+        padding: 1em 0 0 0;
+        margin-bottom: 0.5em;
+        font-weight: bold;
+    }
+
+    p {
+        font-size: 1.2em;
+        margin-top: 0.2em;
+    }
+}
+
+/* specific pictures.html styling */
+.img-container {
+    @extend %main-container;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+
+    img {
+        @include responsive-image-styling;
+    }
+}
+
+/* footer styling */
+footer {
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    bottom: 0;
+    padding: 0;
+    margin-top: auto;
+
+    p {
+        text-align: center;
+        margin: 0.7em 0;
+        padding: 0;
+    }
+}
+
+/* media query for screens larger than 1600 px */
+@media (min-width: 1600px) {
+    .startpage-container,
+    .sass-container {
+        div {
+            max-width: 900px;
+        }
+    }
+}
+
+/* media query for screens smaller than 600 px */
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        margin: 0;
+        padding: 0.4em 0;
+        justify-content: left;
+        align-items: flex-start;
+
+        ul {
+            display: none;
+            flex-direction: column;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            justify-content: left;
+            align-items: start;
+        }
+
+        ul.show {
+            display: flex;
+            align-items: start;
+        }
+
+        li:first-child {
+            margin-left: 0;
+        }
+
+        a {
+            display: inline-block;
+            margin: 1em 1em 1em 2em;
+        }
+
+        /* hamburger icon */
+        .hamburger-icon {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+            margin: 0.5em 0 1em 0;
+            align-self: flex-start;
+            margin-left: 1.5em;
+        }
+
+        .hamburger-icon div {
+            width: 25px;
+            height: 4px;
+            border-radius: 25%;
+            background-color: #000000;
+            transition: transform 0.3s;
+        }
+
+        /* turn hamburger icon into a cross when opened */
+        .hamburger-icon.active div:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .hamburger-icon.active div:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger-icon.active div:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .startpage-container,
+    .sass-container {
+        div {
+            padding: 4em 0;
+            width: 90%;
+        }
+
+        .question {
+            font-size: 1.2em;
+        }
+    }
+
+    .img-container {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding: 7em 0;
+    }
+}
+
+
+/* media query for dark theme */
+@media (prefers-color-scheme: dark) {
+    body {
+        @include base.theme(base.$dark-theme-bg, base.$dark-theme-text, base.$dark-theme-border, base.$dark-theme-heading, base.$dark-theme-primary, base.$dark-theme-secondary);
+    }
+
+    .navbar {
+        a,
+        .hamburger-icon {
+            color: base.$dark-theme-text;
+        }
+
+        .hamburger-icon div {
+            background-color: base.$dark-theme-text;
+        }
+    }
+
+    %main-container {
+        background-color: base.$dark-theme-secondary;
+    }
+
+    img {
+        filter: grayscale(50%);
+    }
+}

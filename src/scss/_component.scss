@@ -1,0 +1,42 @@
+@use "base";
+@use "animations";
+
+/* placeholder button */
+%btn {
+    text-decoration: none;
+    font-size: 1.3em;
+    font-weight: 600;
+    margin: 1em 2em;
+    padding: 0.4em 2em;
+    border-radius: 10px;
+    border: 2px solid;
+    color: inherit;
+    background-color: #fff;
+    text-align: center;
+
+    @include base.theme(base.$light-theme-bg, base.$light-theme-text, base.$light-theme-border, base.$light-theme-heading, base.$light-theme-primary, base.$light-theme-secondary);
+
+    @media (prefers-color-scheme: dark) {
+        @include base.theme(base.$dark-theme-bg, base.$dark-theme-text, base.$dark-theme-border, base.$dark-theme-heading, base.$dark-theme-primary, base.$dark-theme-secondary);
+    }
+}
+
+/* classes when party btn is clicked */
+.party-started {
+    animation: partyBg 3s linear infinite;
+}
+
+.run-animation {
+    animation-play-state: running !important;
+}
+
+/* wavy border from https://css-generators.com/wavy-shapes/ */
+%wavy-top-btm {
+    --mask:
+        radial-gradient(120.93px at 50% 165px, #000 99%, #0000 101%) calc(50% - 120px) 0/240px 51% repeat-x,
+        radial-gradient(120.93px at 50% -105px, #0000 99%, #000 101%) 50% 60px/240px calc(51% - 60px) repeat-x,
+        radial-gradient(120.93px at 50% calc(100% - 165px), #000 99%, #0000 101%) calc(50% - 120px) 100%/240px 51% repeat-x,
+        radial-gradient(120.93px at 50% calc(100% + 105px), #0000 99%, #000 101%) 50% calc(100% - 60px)/240px calc(51% - 60px) repeat-x;
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+}

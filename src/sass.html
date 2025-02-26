@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="scss/main.scss">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script type="module" src="js/app.js"></script>
+    <title>SASS</title>
+</head>
+
+<body>
+    <!-- navigation bar -->
+    <header class="navbar">
+        <!-- hamburger icon for smaller screens -->
+        <div class="hamburger-icon">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <ul class="navbar-items">
+            <li><a href="index.html">Startsida</a></li>
+            <li class="active-item"><a href="sass.html">SASS</a></li>
+            <li><a href="pictures.html">Bilder</a></li>
+            <li><a href="animations.html">Animering</a></li>
+            <li><a href="#">Sida 5</a></li>
+        </ul>
+    </header>
+    <main>
+        <h1>SASS</h1>
+        <section class="sass-container">
+            <div>
+                <h2>Utvärdering</h2>
+                <p class="question">Vilka för- och nackdelar ser du med SASS?</p>
+                <p>Den främsta fördelen jag ser med SASS är att det underlättar arbetet när det kommer till att 
+                    skapa, strukturera och ändra styling av sin webbsida.
+                    <br><br>
+                    Att kunna sätta variabler och dessutom kunna samla frekvent använd kod
+                    i form av mixins och extend/inheritance är inte bara användbart för att minska redundans av kod, utan även för att enkelt kunna 
+                    genomföra en ändring på enbart ett ställe snarare än i en mängd olika regler. Det ger en tydligare överblick av arbetet, särskilt vid förändringar. 
+                    <br><br>
+                    Jag tycker även att användingen av partials är en stor fördel jämfört med hur jag strukturerat vanlig CSS. 
+                    Min upplevelse är att det är lättare att bibehålla en välorganiserad filstruktur med SASS utifrån det 
+                    rekommenderade 7:1-mönstret och att det är lättare att bygga vidare på om så skulle behövas. Även här ges en 
+                    tydligare överblick av arbetet i sin helhet.  
+                    <br><br>
+                    När det kommer till nackdelar med SASS tänker jag främst på att nybörjare möts av en inlärningskurva, trots att det fungerar med 
+                    vanlig CSS. Detta kan tänkas resultera i att man lätt "faller tillbaka" i gamla vanor (vanlig CSS) i stället för att lära sig nytt. 
+                    En annan nackdel är att SASS måste komplieras till vanlig CSS innan koden kan visas i webbläsaren, vilket kan innebära ett extra steg innan publicering.
+                </p>
+                <p class="question">Hur var det att komma igång att arbete med en CSS-preprocessor?</p>
+                <p>Jag upplevde det inledningsvis som svårt att komma in i ett nytt tänk med SASS efter att enbart ha arbetat med vanlig CSS
+                    i tidigare projekt. Det blev dock succcesivt enklare i takt med att jag fick ta del av fördelarna med SASS 
+                    och insåg att det faktiskt underlättar arbetsprocessen. Jag känner mig fortfarande som en SASS-nybörjare men 
+                    jag ser nu fram emot att fortsätta utveckla mina kunskaper. 
+                </p>
+                <p class="question">Övrigt</p>
+                <p>Jag använde inledningsvis color functions "lighten" och "darken" för färgschemat, men efter
+                    ett SASS meddelande i terminalen som rekommenderade color.adjust() bytte jag till detta.
+                </p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div>
+            <p>Frontend-baserad webbutveckling (DT211G)<br>
+                Moment 4 av Julia Gustafsson, jugu2402</p>
+        </div>
+    </footer>
+</body>
+
+</html>

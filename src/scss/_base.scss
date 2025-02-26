@@ -1,0 +1,55 @@
+@use "sass:color";
+
+$font-stack: "Roboto", Arial, Helvetica, sans-serif;
+
+/* light color scheme */
+$light-theme-bg: #F5E3E0;
+$light-theme-text: #000000;
+$light-theme-border: #6E4555;
+$light-theme-heading: color.adjust($light-theme-border, $lightness: -15%);
+$light-theme-primary: color.adjust($light-theme-bg, $lightness: -15%);
+$light-theme-secondary: color.adjust($light-theme-border, $lightness: 50%);
+
+/* dark color scheme */
+$dark-theme-bg: #000000;
+$dark-theme-text: #ffffff;
+$dark-theme-border: #8E4585;
+$dark-theme-heading: color.adjust($dark-theme-border, $lightness: 47%);
+$dark-theme-primary: color.adjust($dark-theme-bg, $lightness: 10%);
+$dark-theme-secondary: color.adjust($dark-theme-border, $lightness: -35%);
+
+h1 {
+    text-align: center;
+    font-size: 3em;
+    color: $light-theme-heading;
+}
+
+h2 {
+    font-size: 1.7em;
+    margin-bottom: 0.4em;
+    color: $light-theme-heading;
+}
+
+/* mixin for color schemes */
+@mixin theme($bg, $text, $border, $heading, $primary, $secondary) {
+    background-color: $bg;
+    color: $text;
+    border-color: $border;
+
+    h1,
+    h2 {
+        color: $heading;
+    }
+
+    .primary {
+        color: $primary;
+    }
+
+    .secondary {
+        color: $secondary;
+    }
+
+    footer {
+        background-color: $primary
+    }
+}

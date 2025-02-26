@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="scss/main.scss">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <script type="module" src="js/app.js"></script>
+    <title>Animering</title>
+</head>
+
+<body>
+    <!-- navigation bar -->
+    <header class="navbar">
+        <!-- hamburger icon for smaller screens -->
+        <div class="hamburger-icon">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <ul class="navbar-items">
+            <li><a href="index.html">Startsida</a></li>
+            <li><a href="sass.html">SASS</a></li>
+            <li><a href="pictures.html">Bilder</a></li>
+            <li class="active-item"><a href="animations.html">Animering</a></li>
+            <li><a href="#">Sida 5</a></li>
+        </ul>
+    </header>
+    <main>
+        <h1>Animeringar</h1>
+        <!-- party btn -->
+        <div class="btn-container">
+            <button class="party-btn">Party Mode</button>
+        </div>
+        <!-- container for all stick guys -->
+        <div class="guy-img-container">
+            <div class="guy-img party-guy">
+                <picture>
+                    <source srcset="./images/stick-guy.png?as=avif" type="image/avif">
+                    <img src="./images/stick-guy.png" alt="rosa streckgubbe" width="200" height="200">
+                </picture>
+            </div>
+            <div class="row-guys">
+                <div class="guy-img-2 party-guy">
+                    <picture>
+                        <source srcset="./images/stick-guy.png?as=avif" type="image/avif">
+                        <img src="./images/stick-guy.png" alt="rosa streckgubbe" width="200" height="200">
+                    </picture>
+                </div>
+                <div class="guy-img-3 party-guy">
+                    <picture>
+                        <source srcset="./images/stick-guy.png?as=avif" type="image/avif">
+                        <img src="./images/stick-guy.png" alt="rosa streckgubbe" width="200" height="200">
+                    </picture>
+                </div>
+                <div class="guy-img-4 party-guy">
+                    <picture>
+                        <source srcset="./images/stick-guy.png?as=avif" type="image/avif">
+                        <img src="./images/stick-guy.png" alt="rosa streckgubbe" width="200" height="200">
+                    </picture>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div>
+            <p>Frontend-baserad webbutveckling (DT211G)<br>
+                Moment 4 av Julia Gustafsson, jugu2402</p>
+        </div>
+    </footer>
+</body>
+
+</html>
