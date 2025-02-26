@@ -2,6 +2,24 @@ import Chart from 'chart.js/auto';
 
 /* bar chart */
 
+async function getData() {
+    const url = "https://studenter.miun.se/~mallar/dt211g/";
+    try {
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error(`Response status: ${response.status}`);
+      }
+  
+      const json = await response.json();
+      console.log(json);
+    } catch (error) {
+      console.error(error.message);
+    }
+  }
+
+getData();
+
+/* 
 (async function() {
     const data = [
       { year: 2010, count: 10 },
@@ -29,6 +47,6 @@ import Chart from 'chart.js/auto';
       }
     );
   })();
-   
+*/
 
 /* pie chart */
