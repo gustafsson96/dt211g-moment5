@@ -11,7 +11,6 @@ async function getData() {
       }
   
       const json = await response.json();
-      console.log(json);
       return json;
     } catch (error) {
       console.error(error.message);
@@ -52,3 +51,32 @@ getData();
   })();
 
 /* pie chart */
+(async function() {
+    const data = await getData()
+
+    // filter out programs
+    const programs = data.filter(item => item.type === "Program");
+
+    // sort by total number of applicants (high to low)
+    programs.sort((a, b) => b.applicantsTotal - a.applicantsTotal);
+
+    // get the top 5 programs
+    const topPrograms = programs.slice(0, 5);
+
+    new Chart(
+      document.getElementById('pieChart'),
+      {
+        type: 'pie',
+        data: {
+          labels: topPrograms.map(program => program.name),
+          datasets: [
+            {
+              label: 'Mest Sökta Kurserna',
+              data: topPrograms.map(program => program.applicantsTotal),
+              backgroundColor: 'rgba(75, 192, 192, 0.5)'
+            }
+          ]
+        }
+      }
+    );
+  })();
