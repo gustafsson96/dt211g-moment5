@@ -1,5 +1,8 @@
 "use strict";
 
+import './chart.js'; // import chart.js
+
+/* responsive navbar functionality */
 document.addEventListener('DOMContentLoaded', function () {
     const menu = document.querySelector('.navbar');
     const menuItems = document.querySelector('.navbar-items');
@@ -12,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+/* btn functionality to start animation */
 const partyBtn = document.querySelector('.party-btn');
 
 partyBtn.addEventListener('click', function() {
