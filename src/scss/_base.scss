@@ -30,6 +30,17 @@ h2 {
     color: $light-theme-heading;
 }
 
+/* message for empty user input */
+.empty-field {
+    visibility: hidden;
+    color: red;
+    margin-top: 10px;
+}
+
+.empty-field.show {
+    visibility: visible;
+}
+
 /* mixin for color schemes */
 @mixin theme($bg, $text, $border, $heading, $primary, $secondary) {
     background-color: $bg;

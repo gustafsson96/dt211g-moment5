@@ -10,7 +10,19 @@ document.getElementById("search-form").addEventListener("submit", async function
     event.preventDefault();
 
     const userInput = event.target.querySelector('input').value.trim();
-    if (!userInput) return;
+
+    const emptyFieldMsg = document.querySelector('.empty-field');
+
+    if (!userInput) {
+        emptyFieldMsg.textContent = "Vänligen ange en plats";
+        emptyFieldMsg.classList.add('show');
+
+        setTimeout(() => {
+            emptyFieldMsg.classList.remove('show'); 
+        }, 2000);
+
+        return;
+    }
 
     const encodedInput = encodeURIComponent(userInput);
     const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodedInput}`;

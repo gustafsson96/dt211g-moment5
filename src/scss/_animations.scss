@@ -53,3 +53,14 @@
         background-color: black;
     }
 }
+
+/* message for empty user input */
+#empty-field {
+    visibility: hidden;
+    color: red;
+    margin-top: 10px;
+}
+
+#empty-field.show {
+    visibility: visible;
+}
