@@ -45,6 +45,18 @@ getData();
             backgroundColor: 'rgba(75, 192, 192, 0.5)'
           }
         ]
+      },
+      options: {
+        plugins: {
+          title: {
+            display: true,
+            text: "6 mest sökta kurserna",
+            font: {
+              size: 20,
+              weight: 'bold'
+            }
+          }
+        }
       }
     }
   );
@@ -79,13 +91,21 @@ getData();
       },
       options: {
         plugins: {
+          title: {
+            display: true,
+            text: "5 mest sökta programmen",
+            font: {
+              size: 20,
+              weight: 'bold'
+            }
+          },
           legend: {
             display: true,
             position: 'right',
             align: 'center',
             labels: {
               boxWidth: 20,
-              padding: 15 
+              padding: 15
             }
           }
         }
