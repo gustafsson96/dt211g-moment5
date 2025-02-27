@@ -225,11 +225,28 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 2px solid red;
     padding: 0 0 1em 0;
-    margin: 1em;
     form {
-        margin: 1em;
+        margin: 0 1em 1em 1em;
+    }
+    input {
+        border-radius: 5px;
+        padding: 3px;
+        border: 1px solid white;
+    }
+    button {
+        background-color: #fff;
+        color: #000;
+        font-weight: bold;
+        border: 1px solid #000;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-left: 1em;
+        transition-property: background-color;
+        transition-duration: 1s;
+    }
+    button:hover {
+        background-color: #F5E3E0;
     }
     iframe {
         margin: 0 auto;

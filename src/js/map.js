@@ -30,11 +30,14 @@ document.getElementById("search-form").addEventListener("submit", async function
         console.log("Sökresultat:", data);
 
         const { lat, lon, display_name } = data[0];
-        alert(`Plats hittad: ${display_name} (Lat: ${lat}, Lon: ${lon})`);
+        const locationInfo = document.getElementById("location-info");
+        locationInfo.innerHTML = `<i>Plats: ${display_name}</i> <br>
+                                  <i>Lat: ${lat}</i> <br>
+                                  <i>Lon: ${lon}</i>`;
 
-                // update src attribute to move marker
-                const mapFrame = document.getElementById("map-frame");
-                mapFrame.src = `https://www.openstreetmap.org/export/embed.html?bbox=${lon}%2C${lat}%2C${lon}%2C${lat}&layer=mapnik&marker=${lat}%2C${lon}`;
+        // update src attribute to move marker
+        const mapFrame = document.getElementById("map-frame");
+        mapFrame.src = `https://www.openstreetmap.org/export/embed.html?bbox=${lon}%2C${lat}%2C${lon}%2C${lat}&layer=mapnik&marker=${lat}%2C${lon}`;
 
     } catch (error) {
         console.error("Error när plats skulle hämtas: ", error);
