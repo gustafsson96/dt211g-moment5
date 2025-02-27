@@ -2,7 +2,7 @@
 
 import './chart.js'; // import chart.js
 
-/* responsive navbar functionality */
+// Toggles menu for smaller screens when hamburger icon is clicked
 document.addEventListener('DOMContentLoaded', function () {
     const menu = document.querySelector('.navbar');
     const menuItems = document.querySelector('.navbar-items');
@@ -15,7 +15,9 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-/* btn functionality to start animation */
+/**
+ * Button to start animation
+ */
 const partyBtn = document.querySelector('.party-btn');
 
 if (partyBtn) {
