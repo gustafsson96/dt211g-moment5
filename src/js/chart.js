@@ -1,4 +1,5 @@
 import Chart from 'chart.js/auto';
+import { color } from 'chart.js/helpers';
 
 
 /* collect course and program data from external url */
@@ -113,7 +114,7 @@ getData();
             align: 'center',
             labels: {
               boxWidth: 20,
-              padding: 10
+              padding: 15
             }
           }
         }

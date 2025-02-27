@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="scss/main.scss">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <script type="module" src="js/app.js"></script>
     <title>Startsida</title>
 </head>
@@ -31,16 +32,12 @@
         </ul>
     </header>
     <main>
-        <h1>Diagram</h1>
-        <div style="width: 800px;"><canvas id="barChart"></canvas></div>
-        <div style="width: 500px;"><canvas id="pieChart"></canvas></div>
+        <section class="chart-container">
+            <h1>Diagram</h1>
+            <div style="width: 900px;"><canvas id="barChart"></canvas></div>
+            <div style="width: 900px;"><canvas id="pieChart"></canvas></div>
+        </section>
     </main>
-    <footer>
-        <div>
-            <p>Frontend-baserad webbutveckling (DT211G)<br>
-                Moment 5 av Julia Gustafsson, jugu2402</p>
-        </div>
-    </footer>
 </body>
 
 </html>
