@@ -43,18 +43,19 @@ getData();
           {
             label: 'Antal sökande',
             data: topCourses.map(course => course.applicantsTotal),
-            backgroundColor: 'rgba(75, 192, 192, 0.5)'
+            backgroundColor: 'rgb(191, 64, 191, 0.6)'
           }
         ]
       },
       options: {
         responsive: true,
         maintainAspectRatio: false,
+        indexAxis: 'y',
         scales: {
           x: {
             ticks: {
               font: {
-                size: 10 
+                size: 10,
               }
             }
           }
