@@ -32,6 +32,10 @@ document.getElementById("search-form").addEventListener("submit", async function
         const { lat, lon, display_name } = data[0];
         alert(`Plats hittad: ${display_name} (Lat: ${lat}, Lon: ${lon})`);
 
+                // update src attribute to move marker
+                const mapFrame = document.getElementById("map-frame");
+                mapFrame.src = `https://www.openstreetmap.org/export/embed.html?bbox=${lon}%2C${lat}%2C${lon}%2C${lat}&layer=mapnik&marker=${lat}%2C${lon}`;
+
     } catch (error) {
         console.error("Error när plats skulle hämtas: ", error);
         alert("Något gick fel. Vänligen testa igen.");
