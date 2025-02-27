@@ -1,5 +1,5 @@
 import Chart from 'chart.js/auto';
-import { color } from 'chart.js/helpers';
+import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 
 /* collect course and program data from external url */
@@ -101,7 +101,7 @@ getData();
           {
             label: 'Antal sökande',
             data: topPrograms.map(program => program.applicantsTotal),
-            backgroundColor: ["rgb(159, 43, 104)", "rgb(191, 64, 191)", "rgb(93, 63, 211)", "rgb(224, 176, 255)", "rgb(145, 95, 109)"]
+            backgroundColor: ["rgb(159, 43, 104)", "rgb(191, 64, 191)", "rgb(93, 63, 211)", "rgb(169, 92, 104, 0.8)", "rgb(145, 95, 109)"]
           }
         ]
       },
@@ -128,9 +128,18 @@ getData();
               boxWidth: 20,
               padding: 15
             }
-          }
+          },
+          datalabels: {
+            color: 'white',
+            font: {
+              size: 12,
+              weight: 'bold'
+            }
+          }, 
+          formatter: (value) => value
         }
-      }
+      },
+      plugins: [ChartDataLabels]
     }
   );
 })();
