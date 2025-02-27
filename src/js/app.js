@@ -1,6 +1,7 @@
 "use strict";
 
 import './chart.js'; // import chart.js
+import './map.js'; // import map.js
 
 // Toggles menu for smaller screens when hamburger icon is clicked
 document.addEventListener('DOMContentLoaded', function () {
