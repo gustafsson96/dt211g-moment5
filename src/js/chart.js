@@ -54,6 +54,9 @@ getData();
             font: {
               size: 20,
               weight: 'bold'
+            },
+            padding: {
+              bottom: 20
             }
           }
         }
@@ -90,6 +93,8 @@ getData();
         ]
       },
       options: {
+        responsive: true,
+        maintainAspectRatio: false,
         plugins: {
           title: {
             display: true,
@@ -97,6 +102,9 @@ getData();
             font: {
               size: 20,
               weight: 'bold'
+            },
+            padding: {
+              bottom: 20
             }
           },
           legend: {
@@ -105,7 +113,7 @@ getData();
             align: 'center',
             labels: {
               boxWidth: 20,
-              padding: 15
+              padding: 10
             }
           }
         }
