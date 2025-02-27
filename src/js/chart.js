@@ -73,7 +73,7 @@ getData();
           {
             label: 'Antal sökande',
             data: topPrograms.map(program => program.applicantsTotal),
-            backgroundColor: ["red", "yellow", "blue", "green", "pink"]
+            backgroundColor: ["rgb(159, 43, 104)", "rgb(191, 64, 191)", "rgb(93, 63, 211)", "rgb(224, 176, 255)", "rgb(145, 95, 109)"]
           }
         ]
       },
