@@ -48,6 +48,17 @@ getData();
         ]
       },
       options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          x: {
+            ticks: {
+              font: {
+                size: 10 
+              }
+            }
+          }
+        },
         plugins: {
           title: {
             display: true,

@@ -3,8 +3,18 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    max-width: 90vw;
+    margin: 0 auto;
+    padding: 1em;
     div {
-        border: 2px solid red;
-        padding: 2em;
+        width: 100%; /* Full width inside container */
+        max-width: 800px; /* Adjust as needed */
+        height: auto;
+        padding: 1em;
+    }
+    canvas {
+        width: 100% !important;
+        height: 400px !important;
     }
 }
