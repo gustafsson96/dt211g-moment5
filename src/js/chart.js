@@ -30,6 +30,9 @@ getData();
  * bar chart showcasing the 6 most popular courses
  * */
 (async function () {
+  const barChartEl = document.getElementById('barChart');
+  if (!barChartEl) return;
+
   const data = await getData()
 
   /** 
@@ -46,7 +49,7 @@ getData();
   const topCourses = courses.slice(0, 6);
 
   new Chart(
-    document.getElementById('barChart'),
+    barChartEl,
     {
       type: 'bar',
       data: {
@@ -95,6 +98,9 @@ getData();
  * pie chart showcasing the 5 most popular programs
  * */
 (async function () {
+  const pieChartEl = document.getElementById('pieChart');
+  if (!pieChartEl) return;
+
   const data = await getData();
 
   /** 
@@ -111,7 +117,7 @@ getData();
   const topPrograms = programs.slice(0, 5);
 
   new Chart(
-    document.getElementById('pieChart'),
+    pieChartEl,
     {
       type: 'pie',
       data: {
