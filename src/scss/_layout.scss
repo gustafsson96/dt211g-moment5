@@ -232,7 +232,7 @@ body {
     input {
         border-radius: 5px;
         padding: 3px;
-        border: 1px solid white;
+        border: 1px solid #000;
     }
     button {
         background-color: #fff;
@@ -241,15 +241,19 @@ body {
         border: 1px solid #000;
         border-radius: 5px;
         cursor: pointer;
-        margin-left: 1em;
+        margin-left: 0.5em;
         transition-property: background-color;
-        transition-duration: 1s;
+        transition-duration: 0.5s;
     }
     button:hover {
-        background-color: #F5E3E0;
+        background-color: #DDDDDD;
     }
     iframe {
         margin: 0 auto;
+    }
+    #location-info {
+        text-align: center;
+        line-height: 1.5;
     }
 }
 
