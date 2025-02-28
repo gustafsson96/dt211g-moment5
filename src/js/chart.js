@@ -78,7 +78,7 @@ getData();
         plugins: {
           title: {
             display: true,
-            text: "6 mest sökta kurserna",
+            text: "MIUNs populäraste kurser HT23",
             font: {
               size: 20,
               weight: 'bold'
@@ -136,7 +136,7 @@ getData();
         plugins: {
           title: {
             display: true,
-            text: "5 mest sökta programmen",
+            text: "MIUNs populäraste program HT23",
             font: {
               size: 20,
               weight: 'bold'
