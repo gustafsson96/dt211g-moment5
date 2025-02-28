@@ -8,7 +8,6 @@ const searchForm = document.getElementById("search-form");
 
 /**
  * Handles form submission for the map search bar.
- * Fetches location data from the Nominatim API using user input.
  *
  * @param {Event} event - Submit event from the map search bar.
  */
