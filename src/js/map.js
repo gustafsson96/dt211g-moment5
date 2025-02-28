@@ -1,20 +1,25 @@
 "use strict";
 
-/**
- * Handles form submission for the map search bar.
- * Fetches location data from the Nominatim API from user input.
- * 
- * @param {Event} The submit event from map search bar
- */
-
+/** 
+* Location search form above map
+* Allows user input
+*/
 const searchForm = document.getElementById("search-form");
 
+/**
+ * Handles form submission for the map search bar
+ * Fetches location data from the Nominatim API from user input
+ * 
+ * @param {Event} event - submit event from map search bar
+ */
 if (searchForm) {
     searchForm.addEventListener("submit", async function (event) {
         event.preventDefault();
 
+        // Get and trim user input from search form
         const userInput = event.target.querySelector('input').value.trim();
 
+        // Container for feeback message
         const emptyFieldMsg = document.querySelector('.empty-field');
 
         if (!userInput) {
@@ -28,7 +33,13 @@ if (searchForm) {
             return;
         }
 
+        // Encoded search bar user input
         const encodedInput = encodeURIComponent(userInput);
+        
+        /**
+         * API URL requesting JSON response for encoded user input
+         * Uses Nominatim OpenStreetMap for location data
+         */
         const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodedInput}`;
 
         try {
@@ -43,15 +54,16 @@ if (searchForm) {
                 return;
             }
 
-            console.log("Sökresultat:", data);
-
+            // Get necessary data from API response
             const { lat, lon, display_name } = data[0];
+
+            // Display location data on page
             const locationInfo = document.getElementById("location-info");
             locationInfo.innerHTML = `<i>Plats: ${display_name}</i> <br>
                                   <i>Lat: ${lat}</i> <br>
                                   <i>Lon: ${lon}</i>`;
 
-            // update src attribute to move marker
+            // Move map marker to retrieved location
             const mapFrame = document.getElementById("map-frame");
             mapFrame.src = `https://www.openstreetmap.org/export/embed.html?bbox=${lon}%2C${lat}%2C${lon}%2C${lat}&layer=mapnik&marker=${lat}%2C${lon}`;
 

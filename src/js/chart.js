@@ -26,9 +26,9 @@ async function getData() {
 getData();
 
 /**
- * Fetches and filters out course data to create horizontal
- * bar chart showcasing the 6 most popular courses
- * */
+ * Fetches and filters out course data 
+ * Creates horizontal bar chart showcasing the 6 most popular courses
+ */
 (async function () {
   const barChartEl = document.getElementById('barChart');
   if (!barChartEl) return;
@@ -37,7 +37,7 @@ getData();
 
   /** 
    * Filtered out courses
-   * */
+   */
   const courses = data.filter(item => item.type === "Kurs");
 
   // Sorts number of applicants from high to low
@@ -45,7 +45,7 @@ getData();
 
   /** 
    * 6 most popular courses
-   * */
+   */
   const topCourses = courses.slice(0, 6);
 
   new Chart(
@@ -96,7 +96,7 @@ getData();
 /**
  * Fetches and filters out program data to create 
  * pie chart showcasing the 5 most popular programs
- * */
+ */
 (async function () {
   const pieChartEl = document.getElementById('pieChart');
   if (!pieChartEl) return;
@@ -105,7 +105,7 @@ getData();
 
   /** 
    * Filtered out programs
-   * */
+   */
   const programs = data.filter(item => item.type === "Program");
 
   // Sorts number of applicants from high to low
@@ -113,7 +113,7 @@ getData();
 
   /** 
    * 5 most popular programs
-   * */
+   */
   const topPrograms = programs.slice(0, 5);
 
   new Chart(
