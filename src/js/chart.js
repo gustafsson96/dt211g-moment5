@@ -6,7 +6,7 @@ import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 /**
  * Collects course and program data from external url
- * @returns {Promise<Array>} Promise of an array
+ * @returns {Promise<Array>} Promise of an array of course and program objects
  */
 async function getData() {
   const url = "https://studenter.miun.se/~mallar/dt211g/";
