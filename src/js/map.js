@@ -1,8 +1,8 @@
 "use strict";
 
 /** 
-* Location search form above map
-* Allows user input
+* Location search form above map.
+* Allows user input.
 */
 const searchForm = document.getElementById("search-form");
 
@@ -36,10 +36,7 @@ if (searchForm) {
         // Encoded search bar user input
         const encodedInput = encodeURIComponent(userInput);
         
-        /**
-         * API URL requesting JSON response for encoded user input
-         * Uses Nominatim OpenStreetMap for location data
-         */
+        // API URL requesting JSON response for encoded user input
         const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodedInput}`;
 
         try {

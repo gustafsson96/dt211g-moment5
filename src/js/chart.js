@@ -5,8 +5,8 @@ import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 
 /**
- * Collects course and program data from external url
- * @returns {Promise<Array>} Promise of an array of course and program objects
+ * Collects course and program data from external url.
+ * @returns {Promise<Array>} Promise of an array of course and program objects.
  */
 async function getData() {
   const url = "https://studenter.miun.se/~mallar/dt211g/";
@@ -29,23 +29,19 @@ getData();
  * Fetches and filters out course data 
  * Creates horizontal bar chart showcasing the 6 most popular courses
  */
-(async function () {
+(async function createBarChart() {
   const barChartEl = document.getElementById('barChart');
   if (!barChartEl) return;
 
   const data = await getData()
 
-  /** 
-   * Filtered out courses
-   */
+  // Filtered out courses
   const courses = data.filter(item => item.type === "Kurs");
 
   // Sorts number of applicants from high to low
   courses.sort((a, b) => b.applicantsTotal - a.applicantsTotal);
 
-  /** 
-   * 6 most popular courses
-   */
+  // 6 most popular courses
   const topCourses = courses.slice(0, 6);
 
   new Chart(
@@ -97,23 +93,19 @@ getData();
  * Fetches and filters out program data to create 
  * pie chart showcasing the 5 most popular programs
  */
-(async function () {
+(async function createPieChart() {
   const pieChartEl = document.getElementById('pieChart');
   if (!pieChartEl) return;
 
   const data = await getData();
 
-  /** 
-   * Filtered out programs
-   */
+  // Filtered out programs
   const programs = data.filter(item => item.type === "Program");
 
   // Sorts number of applicants from high to low
   programs.sort((a, b) => b.applicantsTotal - a.applicantsTotal);
 
-  /** 
-   * 5 most popular programs
-   */
+  // 5 most popular programs
   const topPrograms = programs.slice(0, 5);
 
   new Chart(
