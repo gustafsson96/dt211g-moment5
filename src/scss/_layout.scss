@@ -257,6 +257,13 @@ body {
     }
 }
 
+.jsdoc-link {
+    margin-left: 1.5em;
+    a {
+        font-weight: bold;
+    }
+}
+
 /* footer styling */
 footer {
     font-family: "Roboto", Arial, Helvetica, sans-serif;

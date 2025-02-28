@@ -25,8 +25,8 @@ async function getData() {
 getData();
 
 /**
- * Fetches and filters out course data 
- * Creates horizontal bar chart showcasing the 6 most popular courses
+ * Fetches and filters out course data. 
+ * Creates horizontal bar chart showcasing the 6 most popular courses.
  */
 async function createBarChart() {
   const barChartEl = document.getElementById('barChart');
@@ -89,8 +89,8 @@ async function createBarChart() {
 };
 
 /**
- * Fetches and filters out program data to create 
- * pie chart showcasing the 5 most popular programs
+ * Fetches and filters out program data.
+ * Creates pie chart showcasing the 5 most popular programs.
  */
 async function createPieChart() {
   const pieChartEl = document.getElementById('pieChart');
